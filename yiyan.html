@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>文心一言</title>
+    <meta charset="UTF-8"/>
+    <link rel="shortcut icon" href="https://nlp-eb.cdn.bcebos.com/logo/favicon.ico" type="image/ico"/>
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="https://nlp-eb.cdn.bcebos.com/logo/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://nlp-eb.cdn.bcebos.com/logo/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://nlp-eb.cdn.bcebos.com/logo/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://nlp-eb.cdn.bcebos.com/logo/favicon.ico">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1.0, maximum-scale=1, user-scalable=no">
+    <style>
+		iframe {
+			position: fixed;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			width: 100%;
+			height: 100%;
+			border: none;
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+			z-index: 999999;
+		}
+	</style>
+    <script type="text/javascript">
+        //iOS Web APP中点击链接跳转到Safari 浏览器新标签页的问题 devework.com
+        //stanislav.it/how-to-prevent-ios-standalone-mode-web-apps-from-opening-links-in-safari
+        if(("standalone" in window.navigator) && window.navigator.standalone){
+        var noddy, remotes = false;
+        document.addEventListener('click', function(event) {
+        noddy = event.target;
+        while(noddy.nodeName !== "A" && noddy.nodeName !== "HTML") {
+        noddy = noddy.parentNode;
+        }
+        if('href' in noddy && noddy.href.indexOf('http') !== -1 && (noddy.href.indexOf(document.location.host) !== -1 || remotes))
+        {
+        event.preventDefault();
+        document.location.href = noddy.href;
+        }
+        },false);
+        }
+    </script>
+</head>
+<body>
+<iframe src="https://yiyan.baidu.com"></iframe>
+</body>
+</html>
